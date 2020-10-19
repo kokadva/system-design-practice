@@ -21,3 +21,17 @@ http://nginx.org/en/docs/http/load_balancing.html
 
 #### How to run:
 Run command: `docker-compose up`
+
+### Project 1: Asynchronism with message broker 
+
+#### Description:
+Here goes the description
+
+#### Technologies used:
+* Python/Flask
+* RabbitMQ
+* Docker/Docker-Compose
+
+#### How to run:
+Run command: `docker-compose up`
+
