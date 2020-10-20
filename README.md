@@ -38,3 +38,12 @@ this source: https://medium.com/better-programming/background-processing-with-ra
 #### How to run:
 Run command: `docker-compose up`
 
+### Project 3: Auto scaling 
+
+#### Description:
+
+#### Technologies used:
+
+#### How to run:
+Run command: `docker-compose up`
+
