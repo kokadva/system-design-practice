@@ -1,0 +1,27 @@
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "rabbitmq-worker"
+  namespace: "default"
+  labels:
+    app: "rabbitmq-worker"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "rabbitmq-worker"
+  template:
+    metadata:
+      labels:
+        app: "rabbitmq-worker"
+    spec:
+      containers:
+      - name: "rabbitmq-worker"
+        image: "kokadva/rabbitmq-worker"
+        imagePullPolicy: Always
+        env:
+        - name: "RABBIT_MQ_HOST"
+          valueFrom:
+            configMapKeyRef:
+              key: "RABBIT_MQ_HOST"
+              name: "rabbitmq-config"

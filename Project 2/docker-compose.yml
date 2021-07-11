@@ -1,0 +1,21 @@
+version: "3"
+services:
+#  server:
+#    build: server
+#    ports:
+#      - 8080:8080
+#    environment:
+#      - DB_URI=postgresql://dev:dev@postgresql:5432/dev
+  postgresql:
+    image: 'postgres:9.6'
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_PASSWORD=dev
+      - POSTGRES_USER=dev
+      - POSTGRES_DB=dev
+  rabbitmq:
+    image: 'rabbitmq:3.6-management-alpine'
+    ports:
+      - '5672:5672'
+      - '15672:15672'

@@ -1,0 +1,51 @@
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "server"
+  namespace: "default"
+  labels:
+    app: "server"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "server"
+  template:
+    metadata:
+      labels:
+        app: "server"
+    spec:
+      containers:
+      - name: "server"
+        image: "kokadva/fastapi-server:latest"
+        imagePullPolicy: Always
+        env:
+        - name: "DB_URI"
+          valueFrom:
+            configMapKeyRef:
+              key: "POSTGRES_URI"
+              name: "postgres-config"
+        - name: "RABBIT_MQ_HOST"
+          valueFrom:
+            configMapKeyRef:
+              key: "RABBIT_MQ_HOST"
+              name: "rabbitmq-config"
+
+
+---
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "server-service"
+  namespace: "default"
+  labels:
+    app: "server-service"
+spec:
+  ports:
+  - protocol: "TCP"
+    port: 8080
+    targetPort: 8080
+  selector:
+    app: "server"
+  type: "LoadBalancer"
+  loadBalancerIP: ""
