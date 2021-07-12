@@ -22,10 +22,10 @@ http://nginx.org/en/docs/http/load_balancing.html
 #### How to run:
 Run command: `docker-compose up`
 
-### Project 1: Asynchronism with message broker 
+### Project 1: Asynchronous messaging with RabbitMQ 
 
 #### Description:
-Simple server with one endpoint receiving commands for asynchronous execution which puts messages to the Rabbit MQ, and 
+A simple server with one endpoint receiving commands for asynchronous execution which puts messages to the Rabbit MQ, and 
 a worker app which is listening to the Rabbit MQ and executes command once it's received. This examples is copied from 
 this source: https://medium.com/better-programming/background-processing-with-rabbitmq-python-and-flask-5ca62acf409c
 // TODO add frontend app for receiving async results 
@@ -37,4 +37,24 @@ this source: https://medium.com/better-programming/background-processing-with-ra
 
 #### How to run:
 Run command: `docker-compose up`
+
+### Project 2: Simple load balancing of a stateless server app
+
+#### Description:
+A server with external IP on request save it in the database and sends a message to the RabbitMQ, a simple 
+micro-service (MailSender) listening to the RabbitMQ receives the message and sends according mail to someone
+
+#### Technologies used:
+* Python/FastAPI
+* RabbitMQ
+* Docker/Docker-Compose
+* Kubernetes
+
+#### Architecture:
+![Architecture](Project 2/Architecture.PNG)
+
+#### How to run:
+* Setup Kubernetes with docker desktop
+* Run `kubectl apply -f .` in the `k8` folder
+
 
