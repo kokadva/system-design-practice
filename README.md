@@ -51,7 +51,7 @@ micro-service (MailSender) listening to the RabbitMQ receives the message and se
 * Kubernetes
 
 #### Architecture:
-![Architecture](Project 2/Architecture.PNG)
+![Architecture](metadata/Project2Architecture.PNG)
 
 #### How to run:
 * Setup Kubernetes with docker desktop
