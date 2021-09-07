@@ -1,5 +1,16 @@
 version: "3"
 services:
+  server:
+    build: .
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgresql
+      - redis
+    environment:
+      - POSTGRES_URL=postgresql:5432/dev
+      - REDIS_HOSTNAME=redis
+      - REDIS_PORT=6379
   postgresql:
     image: 'postgres:9.6'
     ports:

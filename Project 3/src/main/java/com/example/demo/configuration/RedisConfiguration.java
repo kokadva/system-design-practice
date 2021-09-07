@@ -1,5 +1,6 @@
 package com.example.demo.configuration;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,12 +15,18 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @Configuration
 public class RedisConfiguration {
 
+    @Value("${redis-hostname}")
+    private String redisHostname;
+
+    @Value("${redis-port}")
+    private Integer redisPort;
+
     @Bean
     JedisConnectionFactory jedisConnectionFactory() {
         RedisStandaloneConfiguration redisStandaloneConfiguration =
                 new RedisStandaloneConfiguration();
-        redisStandaloneConfiguration.setHostName("localhost");
-        redisStandaloneConfiguration.setPort(6379);
+        redisStandaloneConfiguration.setHostName(redisHostname);
+        redisStandaloneConfiguration.setPort(redisPort);
         redisStandaloneConfiguration.setPassword(RedisPassword.none());
         return new JedisConnectionFactory(redisStandaloneConfiguration);
 
