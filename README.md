@@ -38,7 +38,7 @@ this source: https://medium.com/better-programming/background-processing-with-ra
 #### How to run:
 Run command: `docker-compose up`
 
-### Project 2: Simple load balancing of a stateless server app
+### Project 2: Example of building a simple app in Kubernetes
 
 #### Description:
 A server with external IP on request save it in the database and sends a message to the RabbitMQ, a simple 
