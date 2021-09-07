@@ -58,5 +58,18 @@ micro-service (MailSender) listening to the RabbitMQ receives the message and se
 * Run `kubectl apply -f .` in the `k8` folder
 * Destroy `kubectl delete all --all`
 
+### Project 3: Caching with Redis/Spring Boot
+
+#### Description:
+
+#### Technologies used:
+* Redis
+* Java/Spring Boot
+* Docker/Docker-Compose
+* Kubernetes
+
+#### Architecture:
+
+#### How to run:
 
 
