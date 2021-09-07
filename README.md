@@ -56,5 +56,7 @@ micro-service (MailSender) listening to the RabbitMQ receives the message and se
 #### How to run:
 * Setup Kubernetes with docker desktop
 * Run `kubectl apply -f .` in the `k8` folder
+* Destroy `kubectl delete all --all`
+
 
 
