@@ -60,16 +60,15 @@ micro-service (MailSender) listening to the RabbitMQ receives the message and se
 
 ### Project 3: Caching with Redis/Spring Boot
 
+
 #### Description:
+Spring Boot server connected to a postgres DB and Reddis caching retrieved data to redis 
 
 #### Technologies used:
 * Redis
 * Java/Spring Boot
 * Docker/Docker-Compose
-* Kubernetes
-
-#### Architecture:
 
 #### How to run:
-
+* Run `docker compose up`
 
